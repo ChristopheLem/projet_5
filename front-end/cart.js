@@ -88,7 +88,6 @@ const addressErrorMessage = document.getElementById('addressErrorMessage')
 const cityErrorMessage = document.getElementById('cityErrorMessage')
 const emailErrorMessage = document.getElementById('emailErrorMessage')
 
-
 //Permet de vérifier les saisies utilisateurs
 const formValidate = () => {
     if (isValidInput(firstName.value)) { 
@@ -139,4 +138,15 @@ const formValidate = () => {
         firstName.focus();
         return false;
     }
+}
+// Envoie données à l'api 
+const postData = async (method, url, dataElt) => {
+    const response = await fetch(url, {
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        method,
+        body: JSON.stringify(dataElt)
+    })
+    return await response.json();
 }
