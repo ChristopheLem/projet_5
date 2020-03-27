@@ -1,6 +1,13 @@
 // URL de l'api
 const url = 'http://localhost:3000/api/teddies'
 
+// Affiche tous les produits
+const displayProducts = async () => {
+    const products = await getAllTeddies(url)
+    products.forEach(product => {
+    renderProduct(product.name, product._id, product.imageUrl, product.price);
+    });
+}
 // Récupère tous les ours en peluche
 const getAllTeddies = async (url) => {
     const response = await fetch(url);
@@ -19,3 +26,4 @@ function renderProduct (productName, productId, productImg, productPrice) {
     products.appendChild(article);     
 }
 
+displayProducts();
