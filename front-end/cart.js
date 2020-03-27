@@ -65,3 +65,11 @@ displayCart();
 const containNumber = /[0-9]/;
 const regexEmail = /.+@.+\..+/;
 const specialCharacter = /[$&+,:;=?@#|'<>.^*()%!"{}_"]/;
+
+const isNotEmpty = value => value !== "" ? true : false; // Vérifie que la valeur donnée ne soit pas vide
+const isLongEnough = value => value.length > 2 ? true : false; // Vérifie que la valeur donnée ait assez de caractère
+const doNotContainNumber = value => !value.match(containNumber) ? true : false; // Vérifie que la valeur donnée ne possède pas de chiffre
+const doNotContainSpecialCharacter = value => !value.match(specialCharacter) ? true : false; // Vérifie que la valeur donnée ne possède pas de symbole
+const isValidEmail = (value) => value.match(regexEmail) ? true : false; // Vérifie que la valeur donnée soit bien dans le format email
+
+const isValidInput = (value) => isNotEmpty(value) && isLongEnough(value) && doNotContainNumber(value) && doNotContainSpecialCharacter(value);// renvoie true si toutes les conditions sont vérifiées
