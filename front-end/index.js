@@ -19,7 +19,7 @@ function renderProduct (productName, productId, productImg, productPrice) {
     const products = document.querySelector('#products');  // Récupère la div qui contiendra les différents articles 
     const article = document.createElement('article');
     article.innerHTML = `<img alt="${productName}" src="${productImg}">
-    <button class="product-link" type="button"><a href="product/index.html?id=${productId}">Voir</a></button>
+    <button class="product-link" type="button"><a href="product.html?id=${productId}">Voir</a></button>
     <p class="product-title">${productName}</p>
     <p class="price">${productPrice / 1000}</p>
     `
