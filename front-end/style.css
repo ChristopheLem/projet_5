@@ -119,10 +119,7 @@ article button:hover {
     background-color: #F3E9F1;
     border: 1px solid #935DF4;
 }
-
-
 /* INDEX PAGE */
-/* ARTICLE */
 #products article {
     width: 280px;
     height: 350px;
@@ -136,7 +133,6 @@ article button:hover {
 #products article:hover {
     box-shadow: 6px 10px 5px #616161;
 }
-/* ANCHOR IN BUTTON */
 #products article button a {
     color: white;
 }
@@ -158,6 +154,71 @@ article button:hover {
 }
 #product .add-to-cart {
     margin: 20px 0;
+}
+/* CART */
+#cart article {
+    color: #261624;
+    font-size: 12px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin: 0 auto;
+    box-shadow: none;
+}
+#cart article:hover {
+    box-shadow: none;
+}
+#cart article img {
+    width: 80px;
+    height: 65px;
+    display: inline-block;
+    margin: 0;
+}
+
+#cart article .remove {
+    margin: 0;
+    cursor: pointer;
+}
+.invisible {
+    display: none;
+}
+/* FORMULAIRE */
+input[type=text], input[type=email] {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+input[type=submit] {
+  background-color: #935DF4;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #935DF4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #F3E9F1;
+  color: #935DF4;
+}
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+.form-error {
+  color: red;
+  font-size: initial;
+  text-align: center;
+}
+input[type=submit]:disabled, input[type=submit]:disabled:hover {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: none;
 }
 /* TABLET AND ABOVE */
 @media all and (min-width: 768px) {
