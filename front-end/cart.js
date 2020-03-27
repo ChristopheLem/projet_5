@@ -61,3 +61,7 @@ const deleteCart = (removeElt, container, productName) => {
     })
 }
 displayCart();
+
+const containNumber = /[0-9]/;
+const regexEmail = /.+@.+\..+/;
+const specialCharacter = /[$&+,:;=?@#|'<>.^*()%!"{}_"]/;
