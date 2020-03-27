@@ -22,3 +22,28 @@ const renderTeddy = (productData) => {
     </div>`;
 }
 
+// Personnalise le produit
+const customizeYourTeddy = (parentElt, productColors) => {
+    // Crée liste déroulante
+    const label = document.createElement('label');
+    const select = document.createElement('select');
+
+    label.setAttribute('for', 'color-list');
+    label.textContent = 'Couleurs disponibles : '
+    select.id = "color-list";
+
+    parentElt.appendChild(label);
+    parentElt.appendChild(select);
+    // Crée une balise option pour chaque couleur
+    productColors.forEach(productColor => {
+        const option = document.createElement('option');
+        option.value = productColor;
+        option.textContent = productColor.toUpperCase();
+        select.appendChild(option);
+    })
+    // Récupère la couleur choisie dans la console
+    select.addEventListener('change', (e) => {
+        colorChosen = e.target.value.toLowerCase();
+        console.log(colorChosen);        
+    });
+}
