@@ -87,3 +87,56 @@ const lastNameErrorMessage = document.getElementById('lastNameErrorMessage')
 const addressErrorMessage = document.getElementById('addressErrorMessage')
 const cityErrorMessage = document.getElementById('cityErrorMessage')
 const emailErrorMessage = document.getElementById('emailErrorMessage')
+
+
+//Permet de vérifier les saisies utilisateurs
+const formValidate = () => {
+    if (isValidInput(firstName.value)) { 
+        firstNameErrorMessage.textContent = ""; 
+
+        if(isValidInput(lastName.value)) {
+            lastNameErrorMessage.textContent = "";
+
+            if(isNotEmpty(address.value) && isLongEnough(address.value)) {
+                addressErrorMessage.textContent = "";
+
+                if (isValidInput(city.value)) {
+                    cityErrorMessage.textContent = "";
+
+                    if (isValidEmail(email.value)) {
+                        emailErrorMessage.textContent = "";
+
+                        return cartInformation.contact = { // Si toutes les inputs saisies sont valides, renvoie l'objet contact à cartInformation
+                            firstName: firstName.value,
+                            lastName: lastName.value,
+                            address: address.value,
+                            city: city.value,
+                            email: email.value
+                        }
+
+                    } else {
+                        emailErrorMessage.textContent = "Merci de renseigner votre adresse mail !"
+                        email.focus();
+                        return false;
+                    }
+                } else {
+                    cityErrorMessage.textContent = "Merci de renseigner votre ville !";
+                    city.focus();
+                    return false;
+                }
+            } else {
+                addressErrorMessage.textContent = "Merci de renseigner votre adresse !"
+                address.focus();
+                return false;
+            }
+        } else {
+            lastNameErrorMessage.textContent = "Merci de renseigner votre nom !"
+            lastName.focus();
+            return false;
+        }
+    } else {
+        firstNameErrorMessage.textContent = "Merci de renseigner votre prénom !";
+        firstName.focus();
+        return false;
+    }
+}
