@@ -44,3 +44,16 @@ header h1 {
 header .fa-cart-plus {
     font-size: 24px;
 }
+
+/* MAIN */
+main {
+    margin-top: 110px;
+    text-align: center;
+}
+
+main h2 {
+    color: #261624;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 40px;
+}
