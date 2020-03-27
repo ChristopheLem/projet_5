@@ -4,6 +4,15 @@ const url = 'http://localhost:3000/api/teddies/';
 const params = new URLSearchParams(window.location.search)
 const id = params.get("id")
 
+const article = document.querySelector('article'); 
+
+// Affiche le produit
+const displayProduct = async () => {
+    const data = await getOneTeddy(url, id);
+    renderTeddy(data);
+    customizeYourTeddy(article, data.colors);
+    addToCart(article, data);    
+}
 // Récupère un teddy bear
 const getOneTeddy = async (productUrl, productId) => {
     const response = await fetch(productUrl + productId);
@@ -67,3 +76,4 @@ const addToCart = (parentElt, productData) => {
     })
 }
 
+displayProduct();
