@@ -150,3 +150,12 @@ const postData = async (method, url, dataElt) => {
     })
     return await response.json();
 }
+
+btn.addEventListener("click", async (e) => {
+    e.preventDefault(); 
+    const validForm = formValidate(); // Valide le formulaire
+    if (validForm !== false ) {
+        const response = await postData('POST', 'http://localhost:3000/api/teddies/order', cartInformation); // Envoie données au serveur    
+        window.location = `../confirmation/index.html?id=${response.orderId}&price=${totalPrice}&user=${firstName.value}`; // Redirige vers la page de confirmation de commande
+    }
+})
