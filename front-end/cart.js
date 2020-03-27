@@ -73,3 +73,17 @@ const doNotContainSpecialCharacter = value => !value.match(specialCharacter) ? t
 const isValidEmail = (value) => value.match(regexEmail) ? true : false; // Vérifie que la valeur donnée soit bien dans le format email
 
 const isValidInput = (value) => isNotEmpty(value) && isLongEnough(value) && doNotContainNumber(value) && doNotContainSpecialCharacter(value);// renvoie true si toutes les conditions sont vérifiées
+
+// Récupère les éléments du formulaire
+const firstName = form.elements.firstName;
+const lastName = form.elements.lastName;
+const address = form.elements.address;
+const city = form.elements.city;
+const email = form.elements.email;
+const btn = document.getElementById('btn');
+
+const firstNameErrorMessage = document.getElementById('firstNameErrorMessage')
+const lastNameErrorMessage = document.getElementById('lastNameErrorMessage')
+const addressErrorMessage = document.getElementById('addressErrorMessage')
+const cityErrorMessage = document.getElementById('cityErrorMessage')
+const emailErrorMessage = document.getElementById('emailErrorMessage')
