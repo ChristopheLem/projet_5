@@ -18,3 +18,11 @@ const renderCart = (productName, productPrice, imgUrl) => {
     totalPrice += productPrice; /* Implémente prix */ 
     cartTotal.textContent = `Total : ${totalPrice}€`; /* Affiche le prix total */
 }
+/* Supprime élément du panier sur un clique*/
+const deleteCart = (removeElt, container, productName) => {
+    removeElt.addEventListener('click', async () => {/* Gestionnaire d'évènement sur clique */
+        await localStorage.removeItem(productName);/* Supprime item du localStorage */
+        container.remove(); /* Supprime item du DOM */
+        location.reload(true); /* Actualise la page dynamiquement */
+    })
+}
