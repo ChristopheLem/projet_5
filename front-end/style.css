@@ -220,6 +220,10 @@ input[type=submit]:disabled, input[type=submit]:disabled:hover {
     color: #666666;
     cursor: none;
 }
+/* CONFIRMATION */
+#confirmation h2{
+    text-align: center;
+}
 /* TABLET AND ABOVE */
 @media all and (min-width: 768px) {
     /* GLOBAL */
