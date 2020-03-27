@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bitter', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf5f3;
+    
+}
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Courgette', cursive;
+    background-color: #F3E9F1;
+    padding: 10px;
+    color: #261624;
+    border-bottom: 2px solid #935DF4;
+    box-shadow: 3px 5px 5px #616161;
+    z-index: 1;
+}
+header .logo {
+    display: flex;
+    justify-content: start;
+}
+header img {
+    width: 80px;
+}
+header a {
+    align-self: center;    
+    text-decoration: none;
+    color: inherit;
+}
+header h1 {
+    font-weight: 900;
+    margin: 0;
+}
+header .fa-cart-plus {
+    font-size: 24px;
+}
