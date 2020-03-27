@@ -47,3 +47,23 @@ const customizeYourTeddy = (parentElt, productColors) => {
         console.log(colorChosen);        
     });
 }
+// Ajoute le produit au panier
+const addToCart = (parentElt, productData) => {
+    // Crée le bouton d'envoie du produit
+    const btn = document.createElement('button');
+    const div = document.createElement('div');
+    btn.textContent = 'Ajouter au panier';
+    div.classList.add('add-to-cart');
+    parentElt.appendChild(div);    
+    parentElt.appendChild(btn);
+
+    // Assigne valeur à envoyer à localStorage
+    const product = [productData._id, productData.name, productData.price, productData.imageUrl];
+    // Envoie valeur à localStorage après un clique
+    btn.addEventListener('click', () => {
+        localStorage.setItem(productData.name, JSON.stringify(product));
+        btn.classList.add('invisible')
+        div.textContent = 'Le produit a été ajouté au panier !'
+    })
+}
+
